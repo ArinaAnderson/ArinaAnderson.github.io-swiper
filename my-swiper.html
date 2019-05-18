@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>My own swiper</title>
+    <script>
+      // Picture element HTML5 shiv
+      document.createElement( "picture" );
+    </script>
+    <script src="js/picturefill.js" async></script>
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+  <section class="evt">
+    <div class="evt__box">
+      <h2 class="evt__title">
+        Barsik's travelling...
+      </h2>
+      <div class="slider">
+        <div class="slider__togglers"></div>
+
+        <div class="slides" draggable="false">
+          <div class="slide" draggable="false">
+              <picture>
+                <source media="(min-width: 768px)" srcset="img/content/desktop-barsik.jpg 1x, img/content/desktop_barsik@2x.jpg">
+                <img src="img/content/mb-barsik.jpg" srcset="img/content/mb-barsik@2x.jpg 2x" width="280" height="267" draggable="false"></img>
+              </picture>
+          </div>
+          <div class="slide" draggable="false">
+              <picture>
+                <source media="(min-width: 768px)" srcset="img/content/desktop-barsik2.jpg 1x, img/content/desktop-barsik2@2x.jpg">
+                <img src="img/content/mb-barsik2.jpg" srcset="img/content/mb-barsik2@2x.jpg 2x" width="280" height="267" draggable="false"></img>
+              </picture>
+          </div>
+          <div class="slide" draggable="false">
+              <picture>
+                <source media="(min-width: 768px)" srcset="img/content/desktop-barsik3.jpg 1x, img/content/desktop-barsik3@2x.jpg">
+                <img src="img/content/mb-barsik3.jpg" srcset="img/content/mb-barsik3@2x.jpg 2x" width="280" height="267" draggable="false"></img>
+              </picture>
+          </div>
+          <div class="slide" draggable="false">
+              <picture>
+                <source media="(min-width: 768px)" srcset="img/content/desktop-barsik4.jpg 1x, img/content/desktop-barsik4@2x.jpg">
+                <img src="img/content/mb-barsik4.jpg" srcset="img/content/mb-barsik4@2x.jpg 2x" width="280" height="267" draggable="false"></img>
+              </picture>
+          </div>
+          <div class="slide" draggable="false">
+              <picture>
+                <source media="(min-width: 768px)" srcset="img/content/desktop-barsik5.jpg 1x, img/content/desktop-barsik5@2x.jpg">
+                <img src="img/content/mb-barsik5.jpg" srcset="img/content/mb-barsik5@2x.jpg 2x" width="280" height="267" draggable="false"></img>
+              </picture>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <template id="toggler">
+      <button type="button" class="slider__btn"></button>
+    </template>
+  </section>
+    <script src="js/script.js"></script>
+  </body>
+</html>
+
+

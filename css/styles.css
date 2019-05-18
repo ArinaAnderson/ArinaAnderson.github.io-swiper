@@ -1,0 +1,167 @@
+body {
+  padding: 0;
+  margin: 0;
+
+  font-family: 'Arial', sans-serif;
+}
+.visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+
+  white-space: nowrap;
+
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+.evt {
+  width: 100%;
+  
+  box-sizing: border-box;
+  background-color: #669933;
+}
+.evt__box {
+  width: 100%;
+  max-width: 1600px;
+  /*min-width: 320px;*/
+  /*padding: 0 20px;*/
+  
+  box-sizing: border-box;
+}
+
+.evt__title {
+  padding: 0;
+  padding-top: 30px;
+  text-align: center;
+}
+.slider {
+  position: relative;
+
+  width: 100%;
+  height: 372px;
+  padding: 0 20px;
+  /*max-width: 1600px;*/
+  min-width: 320px;/*???*/
+  margin: 50px auto;
+  box-sizing: border-box;
+
+  background-image: linear-gradient(to right, rgba(255, 153, 153, 0.9) 50%, rgba(51, 51, 102, 0.9) 50%);
+
+  overflow: hidden;/*overflow-x: scroll;*/
+
+ 
+  /*transition-timing-function: 2s;*/
+}
+
+.slides {
+  position: absolute;
+  top: 0;
+  left: 50%;
+
+  display: flex;
+  /*transition: ease-out;*/
+  /*transition-property: left;*/
+}
+
+.slides--animated {
+  -webkit-transition: -webkit-all 0.4s ease-in;
+  transition: -webkit-all 0.4s ease-in;
+  -o-transition: all 0.4s ease-in;
+  transition: all 0.4s ease-in;
+  transition: all 0.4s ease-in, -webkit-transform 0.4s ease-in;
+}
+
+.slide {
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	flex-shrink: 0;width: 280px;
+  height: auto;
+  box-sizing: border-box;
+}
+
+.slide img {
+  display: block;
+  width: 100%;
+  height: auto;
+  /*object-fit: contain;*/
+}
+
+.slider__togglers {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  z-index: 13;
+
+  display: flex;
+  align-items: center;
+  
+  
+  transform: translateX(-50%);
+}
+
+.slider__btn {
+  display: block;
+  width: 32px;
+  height: 30px;
+  margin: 0 12px;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  background-image: url("../img/toggler.svg");
+  border: none;
+}
+
+.slider__btn:focus,
+.slider__btn:hover {
+  background-image: url("../img/toggler_active.svg");
+}
+.slider__btn--active {
+  background-image: url("../img/toggler_active.svg");
+}
+
+@media (min-width: 768px) {
+  .evt__box {
+    padding: 0 20px;
+  }
+  .slider {
+    height: 26.572916666vw;
+    padding: 0;
+  }
+}
+
+@media (min-width: 940px) {
+  .evt__box {
+    padding: 0 50px;
+  }
+}
+
+#slider-toggler-0:focus ~ label[for="slider-toggler-0"],
+#slider-toggler-1:focus ~ label[for="slider-toggler-1"],
+#slider-toggler-2:focus ~ label[for="slider-toggler-2"],
+#slider-toggler-3:focus ~ label[for="slider-toggler-3"],
+#slider-toggler-4:focus ~ label[for="slider-toggler-4"],
+#slider-toggler-0:checked ~ label[for="slider-toggler-0"],
+#slider-toggler-1:checked ~ label[for="slider-toggler-1"],
+#slider-toggler-2:checked ~ label[for="slider-toggler-2"],
+#slider-toggler-3:checked ~ label[for="slider-toggler-3"],
+#slider-toggler-4:checked ~ label[for="slider-toggler-4"] {
+  background-image: url("../img/toggler_active.svg");
+}
+
+#slider-toggler-0:focus ~ label[for="slider-toggler-0"],
+#slider-toggler-1:focus ~ label[for="slider-toggler-1"],
+#slider-toggler-2:focus ~ label[for="slider-toggler-2"],
+#slider-toggler-3:focus ~ label[for="slider-toggler-3"],
+#slider-toggler-4:focus ~ label[for="slider-toggler-4"] {
+  box-shadow: 0 0 3px #a02119;
+  /*border-radius: 25% 50%;*/
+}
+
+
