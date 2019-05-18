@@ -209,7 +209,9 @@ calculateSlideWidth();
 positionSlider();
 renderTogglers();
 
+slider.addEventListener('mousedown', slidesMouseDownHandler);
 slider.addEventListener('touchstart', slidesTouchStartHandler);
+
 
 /*togglers.forEach(function (btn) {
   btn.addEventListener('click', function (evt) {
