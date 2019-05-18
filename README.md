@@ -1,1 +1,1 @@
-permalink: /index.html
+permalink: /my-swiper.html
