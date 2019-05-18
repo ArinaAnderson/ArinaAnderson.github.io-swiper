@@ -35,6 +35,14 @@ function renderToggler() {
     slider.classList.add('slides--animated');
     positionSlider();
   });
+  /*toggler.addEventListener('keydown', function (evt) {
+    togglerActive.classList.remove('slider__btn--active');
+    slidesLeft = togglers.indexOf(evt.target);
+    activeSlide = slidesList[slidesLeft];
+    //togglerActive = togglers[slidesLeft];
+    slider.classList.add('slides--animated');
+    positionSlider();
+  });*/
   return toggler;
 }
 function renderTogglers() {
@@ -142,74 +150,13 @@ function slidesMouseDownHandler(evt) {
   document.addEventListener('mouseup', slidesMouseUpHandler);
 }
 
-
-function slidesTouchStartHandler(evt) {
-  slider.classList.remove('slides--animated');
-  var initilaCoords = {
-    x: evt.clientX
-  };
-  evt.preventDefault();
-  var startX = initilaCoords.x;
-  var startSlide = slidesList[0];
-  var startIndex = 0;
-  var startPosition = slider.offsetLeft;
-  var slideWidth = slidesList[0].offsetWidth;
-
-  function slidesTouchMoveHandler(moveEvt) {
-    var shiftCoords = {
-      x: initilaCoords.x - moveEvt.clientX
-    };
-
-    var validatedX = validateCoord(slider.offsetLeft - shiftCoords.x, min, max);
-    slider.style.left = validatedX + 'px';
-
-    initilaCoords.x = moveEvt.clientX;
-  }
-
-  function slidesTouchEndHandler(upEvt) {
-    upEvt.preventDefault();
-    var finalX = upEvt.clientX;
-    var deltaX = startX - finalX;
-    
-    slideCount = Math.floor((deltaX + sWidth * 0.5) / sWidth);
-    if (slideCount + slidesLeft < 0) {
-      slideCount = 0 - slidesLeft;
-    } 
-    if (slideCount + slidesLeft > maxSlidesLeft) {
-      slideCount = maxSlidesLeft - slidesLeft;
-
-    }
-    slidesLeft = slidesLeft + slideCount;
-    
-    activeSlide = slidesList[slidesLeft];/*ADD*/
-
-    var newPosition = startPosition - sWidth * slideCount;          
-
-    slider.classList.add('slides--animated');
-
-    slider.style.left = newPosition + 'px';
-    console.log(togglerActive);
-    togglerActive.blur();
-    togglerActive.classList.remove('slider__btn--active');
-    //togglers[slidesLeft].classList.add('slider__btn--active');
-    //togglerActiveIndex = slidesLeft;
-    togglerActive = togglers[slidesLeft];
-    togglerActive.classList.add('slider__btn--active');
-
-    document.removeEventListener('touchmove', slidesTouchMoveHandler);
-    document.removeEventListener('touchend', slidesTouchEndHandler);
-  }
-
-  document.addEventListener('touchmove', slidesTouchMoveHandler);
-  document.addEventListener('touchend', slidesTouchEndHandler);
-}
 /*ACTION:*/
 
 calculateSlideWidth();
 positionSlider();
 renderTogglers();
 
-slider.addEventListener('touchstart', slidesTouchStartHandler);
+slider.addEventListener('mousedown', slidesMouseDownHandler);
 
 /*togglers.forEach(function (btn) {
   btn.addEventListener('click', function (evt) {
